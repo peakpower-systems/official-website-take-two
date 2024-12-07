@@ -1,0 +1,87 @@
+html
+    head
+        title Contact Us - Peak Power Systems
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+        link(rel='stylesheet', href='/css/bootstrap.css')
+        script.
+            document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('submitform').addEventListener('submit', function(e) {
+                    e.preventDefault(); // Prevent the default form submission
+                    var emailAddress = document.getElementById('emailAddress').value;
+                    var faxNumber = document.getElementById('faxNumber').value;
+                    var subject = document.getElementById('subject').value;
+                    var message = document.getElementById('message').value;
+                    var name = document.getElementById('name').value;
+
+                    if (faxNumber !== '' || emailAddress !== '') {
+                        alert('Spam detected.');
+                        return;
+                    }
+
+                    if (subject === '' || message === '' || name === '') {
+                        alert('Please fill out the name, subject, and message fields.');
+                        return;
+                    }
+
+                    message += "\n\nSincerely,\n" + name;
+
+                    var formData = new FormData(this);
+
+                    fetch('/submit', {
+                        method: 'POST',
+                        body: formData
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if(data.success) {
+                            // Use the mailto link from the server to open the default email client
+                            const mailtolink = `mailto:sales@peakpowersystems.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
+                            window.location.href = mailtolink;
+                        } else {
+                            alert('Failed to process the request.');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                    });
+                });
+            });
+        style.
+            .btn {
+                border: none;
+            }
+            #submit {
+                background-color: #FF6B00;
+            }
+            #reset {
+                background-color: #242729;
+            }
+        body
+            nav.navbar.bg-dark.navbar-dark
+                div.d-flex.justify-content-end
+                    a.text-white(style = 'padding-left: 20px; padding-right: 20px;', href="/") Home
+                    a.text-white(style = 'padding-left: 20px; padding-right: 20px;', href="/products") Products
+                    a.text-white(style = 'padding-left: 20px; padding-right: 20px;', href="/contact") Contact Us
+                    a.text-white(style = 'padding-left: 20px; padding-right: 20px;', href="/careers") Careers
+        block content
+            .container
+                h1(style = "display: flex; justify-content: center; text-align: center;") Contact Us
+                p(style = "display: flex; justify-content: center; text-align: center;") Feel free to send us a message about our products and services. We will get back to you as soon as possible.
+                form(id="submitform", action='/submit', method='post')
+                    div.form-group
+                        label(for='name') Name:
+                        input(type='text', class='form-control', id='name', name='name')
+                    div.form-group
+                        label(for='subject') Subject:
+                        input(type='text', class='form-control', id='subject', name='subject')
+                    div.form-group
+                        label(for='message') Message:
+                        textarea(class='form-control', id='message', name='message')
+                    div.form-group(style="display: none;")
+                        label(for='emailAddress') Email Address:
+                        input(type='email', class='form-control', id='emailAddress', name='emailAddress')
+                        label(for='faxNumber') Fax Number:
+                        input(type='text', class='form-control', id='faxNumber', name='faxNumber')
+                    button(type='submit', class = 'btn btn-primary', style = "margin-top: 10px; margin-right: 10px;", id = "submit") Submit
+                    button(type='reset', class='btn btn-secondary', style = "margin-top: 10px;", id = "reset") Reset

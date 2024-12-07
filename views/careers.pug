@@ -1,0 +1,26 @@
+doctype html
+html
+    head
+        title Careers - Peak Power Systems
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+        link(rel='stylesheet', href='/css/bootstrap.css')
+        style.
+            a {
+                color: #FF6B00;
+            }
+    body
+        nav.navbar.bg-dark.navbar-dark
+            div.d-flex.justify-content-end
+                a.text-white(style = 'padding-left: 20px; padding-right: 20px;', href="/") Home
+                a.text-white(style = 'padding-left: 20px; padding-right: 20px;', href="/products") Products
+                a.text-white(style = 'padding-left: 20px; padding-right: 20px;', href="/contact") Contact Us
+                a.text-white(style = 'padding-left: 20px; padding-right: 20px;', href="/careers") Careers
+        block content
+            .container
+                h1 Careers at Peak Power Systems
+                p Peak Power Systems is always looking for talented individuals to join our team. If you are interested in any of these roles, please send your resume and/or cover letter to: perry@peakpowersystems.com
+                ul.list-group
+                    each job in jobs
+                        li.list-group-item
+                            a(href= "/" + job.JobID) #{job.Name}
