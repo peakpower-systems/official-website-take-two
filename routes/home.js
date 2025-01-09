@@ -51,4 +51,20 @@ router.get('/:ID(\\d+)', async (req, res) => {
     }
 });
 
+router.get('/residential', async (req, res) => {
+    res.render('residential');
+});
+
+router.get('/commercial', async (req, res) => {
+    res.render('commercial');
+});
+
+router.get('/industrial', async (req, res) => {
+    res.render('industrial');
+});
+
+router.get('/capabilities', async (req, res) => {
+    res.render('capabilities');
+});
+
 module.exports = router;

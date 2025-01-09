@@ -5,17 +5,15 @@ html
         meta(charset='utf-8')
         meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
         link(rel='stylesheet', href='/css/bootstrap.css')
-        style.
-            a {
-                color: #FF6B00;
-            }
+        link(href="/css/styles.css", rel="stylesheet")
     body
         nav.navbar.bg-dark.navbar-dark
             div.d-flex.justify-content-end
-                a.text-white(style = 'padding-left: 20px; padding-right: 20px;', href="/") Home
-                a.text-white(style = 'padding-left: 20px; padding-right: 20px;', href="/products") Products
-                a.text-white(style = 'padding-left: 20px; padding-right: 20px;', href="/contact") Contact Us
-                a.text-white(style = 'padding-left: 20px; padding-right: 20px;', href="/careers") Careers
+                a.text-white.nav-link(style = 'padding-left: 20px; padding-right: 20px;', href="/") Home
+                // a.text-white(style = 'padding-left: 20px; padding-right: 20px;', href="/products") Products
+                a.text-white.nav-link(style = 'padding-left: 20px; padding-right: 20px;', href="/capabilities") Capabilities
+                a.text-white.nav-link(style = 'padding-left: 20px; padding-right: 20px;', href="/contact") Contact Us
+                a.text-white.nav-link(style = 'padding-left: 20px; padding-right: 20px;', href="/careers") Careers
         block content
             .container
                 h1 #{currentjob.Name}
