@@ -28,8 +28,18 @@ indices_of_concern = [35, 43, 59, 52, 55, 13, 39]
 # Plot the counties
 fig, ax = plt.subplots()
 
+counties = ["Orange", "Rockland", "Westchester", "Sullivan",
+            "Ulster", "Dutchess", "Putnam"]
+
 # Plot the counties of concern in sepia color
-ny_counties.loc[indices_of_concern].plot(ax=ax, color='#704214',
+ny_counties.loc[indices_of_concern].plot(ax=ax, color='#fffec9',
                                          edgecolor='black')
 
-plt.savefig("nymap.png")
+for idx, county_name in zip(indices_of_concern, counties):
+    county = ny_counties.loc[idx]
+    ax.annotate(county_name, xy=(county.geometry.centroid.x, county.geometry.centroid.y),
+                ha='center', fontsize=5.5, color='black')
+
+plt.title("Peak Power's Territory")
+
+plt.savefig("peakpowercounties.png")
