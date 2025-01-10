@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const username = "sales@peakpowersystems.com";
+const username = process.env.EMAIL;
 
 router.get('/', async (req, res) => {
     res.render('home');

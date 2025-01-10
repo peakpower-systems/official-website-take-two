@@ -39,6 +39,8 @@ for idx, county_name in zip(indices_of_concern, counties):
     county = ny_counties.loc[idx]
     ax.annotate(county_name, xy=(county.geometry.centroid.x, county.geometry.centroid.y),
                 ha='center', fontsize=5.5, color='black')
+    
+ax.axis('off')
 
 plt.title("Peak Power's Territory")
 

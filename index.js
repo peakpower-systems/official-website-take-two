@@ -6,9 +6,9 @@ const app = express();
 app.use(express.urlencoded({ extended: true }))
 app.set('view engine', 'pug');
 app.locals.pretty = true;
-const port = 8080;
+const port = process.env.PORT || 8080;
 const {MongoClient, ServerApiVersion} = require('mongodb');
-const client = new MongoClient("mongodb+srv://sales:Generator1@ppsdatabase.n4m5q.mongodb.net/?retryWrites=true&w=majority&appName=PPSDatabase", {
+const client = new MongoClient(process.env.MONGODB_URL, {
     serverApi: {
         version: ServerApiVersion.v1,
         strict: true,
