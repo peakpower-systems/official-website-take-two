@@ -9,18 +9,16 @@ block content
                 h1(style='text-align: center;') Peak Power Systems
                 h4(style='text-align: center;') 99 Sprague Avenue
                 h4(style='text-align: center;') Middletown, NY 10940
-                h4(style='text-align: center;') Phone: (845) 344-1975
             div.grid-item(style = 'padding-left: 20px; padding-right: 20px;')
                 img(src="/img/generators/IMG_1922.JPEG", alt="Residential Generator", class = "web-img", style = "width: 258px; height: 258px; border: none;")
-
         div(style = 'display: flex; justify-content : center; align-items : center;')
             img(src='/img/generators/IMG_1410.JPG', alt='Industrial Generator', class = "mobile-img", style = 'width: 258px; height: 258px; border: none;')
         br
         div(style = 'display: flex; justify-content : center; align-items : center;')
             img(src='/img/generators/IMG_1922.JPEG', alt='Residential Generator', class = "mobile-img", style = 'width: 258px; height: 258px; border: none;')
         br
-        p(style = 'display: flex; justify-content: center; text-align: center;') Peak Power Systems is a regional leader providing local emergency power and generator services, warehoused in Middletown, NY.
-        p(style = 'display: flex; justify-content: center; text-align: center;') Our team of experts is here to help you plan for the right solution for your emergency power needs before you need them.
+        // p(style = 'display: flex; justify-content: center; text-align: center; font-size: 24px;') Peak Power Systems is the Hudson Valley leader in providing local emergency power and generator services, warehoused in Middletown, NY.
+        p(style = 'display: flex; justify-content: center; text-align: center; font-size: 24px;') Our team of experts is here to help you plan for the right solution for your emergency power needs before you need them.
         // table(class = "center responsive-table")
             tr
                 th(style="padding: 10px;") Emergency Power Solutions
@@ -38,13 +36,59 @@ block content
                     a(href="/industrial") Industrial
                 td(style="padding: 10px; text-align: center;") Industry Referrals
         // br
-        h4(style = 'display: flex; justify-content: center; text-align: center;') The leader in the seven county Hudson Valley!
-        ul.list-group
-            li.list-group-item(style = "text-align: center;") Orange County
-            li.list-group-item(style = "text-align: center;") Rockland County
-            li.list-group-item(style = "text-align: center;") Westchester County
-            li.list-group-item(style = "text-align: center;") Sullivan County
-            li.list-group-item(style = "text-align: center;") Ulster County
-            li.list-group-item(style = "text-align: center;") Dutchess County
-            li.list-group-item(style = "text-align: center;") Putnam County
-        img(src='/scripts/peakpowercounties.png', class="centerimage")
+        h4(style = 'display: flex; justify-content: center; text-align: center;') Emergency generator service leader in seven counties!
+    div(style = 'display: flex; justify-content : center; align-items : center;', class="flex-container", id='map')
+        div(style = 'display: flex; align-items: center;', class="flex-item")
+            img(src='/img/PPSMAP.jpg', class="centerimage map-image")
+    hr
+    div(style = 'width: 100vw; margin: 0; background-color:#ffa742;')
+        div(style = 'display: flex; justify-content : center; align-items : center; padding: 20px;', id="solutions", class="flex-container")
+            div(style = 'display: flex; align-items: center;', class="flex-item")
+                figure(style='align-items: center;')
+                    img(src='/img/generators/IMG_20250124_140435.png', style='margin-right: 10px;', width=300, height='auto')
+                    figcaption(style='font-size: 12px;') Specifications: 80 KW Generator, Natural Gas/LP, <br/>Sound-Attenuated
+            br
+            div(class="flex-item")
+                p(style='font-size: 26px; margin-top: -20px;') <b>Emergency Power Solutions</b>
+                br
+                p(style='font-size: 26px;') When you have no time to think about emergency power,
+                p(style='font-size: 26px;') <u>Peak Power will manage it for you!</u>
+    hr
+    div(style = 'display: flex; justify-content : center; align-items : center;', class="flex-container", id="residential")
+        div(style = 'display: flex; align-items: center;', class="flex-item")
+            figure
+                img(src='/img/generators/IMG_1922.JPEG', style='margin-right: 10px;' width='250', height='auto')
+        div(class="flex-item")
+            p(style = 'text-align: center; font-size: 26px;') <b>Residential Generators</b>
+            //p(style = 'text-align: center; font-size: 26px;') We service over <b>1,500</b> residents in the seven countieslower Hudson Valley!
+            p(style='text-align: center; font-size: 26px;') Service, maintain, and repair your residential emergency power!
+            p(style='text-align: center; font-size: 26px;') We service over <b>1,500</b> residents in <br /> <a href="#map">the seven counties of the Hudson Valley!</a>
+    hr
+    div(style = 'width: 100vw; margin: 0; background-color: #ffa742;', id="commercial")
+        div(style = 'display: flex; justify-content : center; align-items : center; padding: 20px;', class="flex-container")
+            div(style = 'display: flex; align-items: center;', class="flex-item")
+                img(src='/img/generators/industrialgenerator.jpg', style='margin-right: 10px;', width='250', height='auto')
+            div(class="flex-item")
+                p(style = 'text-align: center; font-size: 26px;') <b>Commercial and Industrial</b>
+                br
+                p(style = 'text-align: center; font-size: 26px;') Sales, managing and servicing more than <b>650</b> municipal commercial and industrial customers in <a href="#map">the seven counties of the Hudson Valley!</a>
+    hr
+    div(style = 'display: flex; justify-content : center; align-items : center;', id="maintenance", class="flex-container")
+        div(style = 'display: flex; align-items: center;', class="flex-item")
+            img(src='/scripts/peakpowercounties.png', alt='Map', style='margin-right: 10px;')
+        div(class="flex-item")
+            p(style = 'text-align: center; font-size: 26px;') <b>Maintenance and Repairs</b>
+            p(style = 'text-align: center; font-size: 26px;') Generator maintenance you can count on!
+    hr
+    div(style = 'width: 100vw; margin: 0; background-color: #ffa742;')
+        div(style = 'display: flex; justify-content: center; align-items: center; padding: 20px;', id="equipment", class="flex-container")
+            div(class="flex-item")
+                img(src='/scripts/peakpowercounties.png', alt='Map', style='margin-right: 10px;')
+            div(class="flex-item")
+                p(style = 'text-align: center; font-size: 26px;') <b>Equipment Sales</b>
+                br
+                p(style = 'text-align: center; font-size: 26px;') Restore, Replace, or Rebuild!
+                br
+                p(style = 'text-align: center; font-size: 26px;') Pricing Plans and Free Estimates!
+                br
+                p(style = 'text-align: center; font-size: 26px;') <b>For more information, contact us at: <a href="tel:845-344-1975">845-344-1975</a></b>

@@ -6,13 +6,38 @@ html
         meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
         link(rel='stylesheet', href='/css/bootstrap.css')
         link(href="/css/styles.css", rel="stylesheet")
+        style.
+            @media (max-width: 768px) {
+                .desktop-links {
+                    display: none;
+                }
+                .mobile-link {
+                    display: block;
+                }
+            }
+            @media (min-width: 769px) {
+                .desktop-links {
+                    display: block;
+                }
+                .mobile-link {
+                    display: none;
+                }
+            }
     body
         .wrapper
             nav.navbar.bg-dark.navbar-dark
-                div.d-flex.justify-content-end
-                    a.text-white.nav-link(style = 'padding-left: 20px; padding-right: 20px;', href="/") Home
+                div.d-flex.mx-auto
+                    a.text-white.nav-link(style = 'padding-left: 20px; padding-right: 20px;', href="#solutions") Emergency Power
                     // a.text-white.nav-link(style = 'padding-left: 20px; padding-right: 20px;', href="/products") Products
-                    a.text-white.nav-link(style = 'padding-left: 20px; padding-right: 20px;', href="/capabilities") Capabilities
-                    a.text-white.nav-link(style = 'padding-left: 20px; padding-right: 20px;', href="/contact") Contact Us
-                    a.text-white.nav-link(style = 'padding-left: 20px; padding-right: 20px;', href="/careers") Careers
+                    p.text-white.nav-link(style = 'padding-left: 20px; padding-right: 20px;') <a style = "display: inline-block;", href="#residential", class="text-white nav-link">Residential, </a> <a style = "display: inline-block;", href="#commercial", class="text-white nav-link">Commercial, </a> <a style = "display: inline-block;", href="#commercial", class="text-white nav-link">Industrial</a>
+                    a.text-white.nav-link.desktop-links(style = 'padding-left: 20px; padding-right: 20px;', href="/contact") Contact Us
+                    a.text-white.nav-link.desktop-links(style = 'padding-left: 20px; padding-right: 20px;', href="/careers") Careers
+                    p.text-white.nav-link.mobile-link(style = 'padding-left: 20px; padding-right: 20px;') <a style = "display: inline-block;", href="/contact", class="text-white nav-link">Contact Us</a><br /><a style = "display: inline-block;", href="/careers", class="text-white nav-link">Careers</a>
+            nav.navbar.secondary-navbar
+                div.d-flex.mx-auto
+                    p.text-black(style = 'padding-left: 20px; padding-right: 20px;') <b>Peak Power Systems is here for you!</b>
+                    a.text-black.nav-link(style = 'padding-left: 20px; padding-right: 20px;', href="#equipment") New Equipment Sales
+                    a.text-black.nav-link(style = 'padding-left: 20px; padding-right: 20px;', href="#maintenance") Maintenance, Repairs, Rebuilds
+                    // a.text-black.nav-link(style = 'padding-left: 20px; padding-right: 20px;', href="#monitor") Remote Monitoring
+                    // a.text-black.nav-link(style = 'padding-left: 20px; padding-right: 20px;', href="#rentals") Rentals
             block content

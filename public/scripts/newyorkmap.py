@@ -31,14 +31,9 @@ fig, ax = plt.subplots()
 counties = ["Orange", "Rockland", "Westchester", "Sullivan",
             "Ulster", "Dutchess", "Putnam"]
 
-# Plot the counties of concern in sepia color
-ny_counties.loc[indices_of_concern].plot(ax=ax, color='#fffec9',
+# Plot the counties of concern
+ny_counties.loc[indices_of_concern].plot(ax=ax, color='#ffa742',
                                          edgecolor='black')
-
-for idx, county_name in zip(indices_of_concern, counties):
-    county = ny_counties.loc[idx]
-    ax.annotate(county_name, xy=(county.geometry.centroid.x, county.geometry.centroid.y),
-                ha='center', fontsize=5.5, color='black')
     
 ax.axis('off')
 
